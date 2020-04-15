@@ -76,6 +76,11 @@ itemized sublists:
 
     say ($('a', 'b'), 'c').perl;    # OUTPUT: «($("a", "b"), "c")␤»
 
+To still be able to flatten them they need to be converted first into a
+L<Slip|/type/Slip>:
+
+    say ($('a', 'b'), 'c')>>.Slip.flat.elems;    # OUTPUT: «3␤»
+
 =head2 method lazy
 
 Defined as:
